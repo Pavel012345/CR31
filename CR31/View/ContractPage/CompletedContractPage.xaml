@@ -1,0 +1,103 @@
+﻿<Page x:Class="CR31.View.ContractPage.CompletedContractPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CR31.View.ContractPage"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      Title="CompletedContractPage">
+
+    <Grid>
+        <Border HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                CornerRadius="25"
+                Width="665"
+                Height="380"
+                Background="Gray"
+                Effect="{StaticResource MaterialDesignElevationShadow1}">
+        </Border>
+
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Grid.Column="1"
+                    Margin="5">
+            <DataGrid x:Name="DataOrderInfo"
+                      FontSize="15"
+                      Height="380"
+                      Width="665"
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True"
+                      CanUserSortColumns="False"
+                      Background="Gray"
+                      Foreground="White"
+                      GridLinesVisibility="Horizontal"
+                      ColumnHeaderHeight="50"
+                      CanUserAddRows="False"
+                      CanUserDeleteRows="False"
+                      CanUserResizeRows="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="Auto"
+                                        Header="Номер договора"
+                                        Binding="{Binding ContractID}"
+                                        FontSize="15"/>
+                    <DataGridTextColumn Width="Auto"
+                                        Header="Номер сотрудника"
+                                        Binding="{Binding ExployeeID}"
+                                        FontSize="15"/>
+                    <DataGridTextColumn Width="Auto"
+                                        Header="Номер клиента"
+                                        Binding="{Binding ClientID}"
+                                        FontSize="15"/>
+                    <DataGridTextColumn Width="Auto"
+                                        Header="Номер автомобиля"
+                                        Binding="{Binding CarID}"
+                                        FontSize="15"/>
+                    <DataGridTextColumn Width="Auto"
+                                        Header="Сумма договора"
+                                        Binding="{Binding Amount}"
+                                        FontSize="15"/>
+                    <DataGridTextColumn Width="Auto"
+                                        Header="Начало аренды автомобиля"
+                                        Binding="{Binding Start_rent}"
+                                        FontSize="15"/>
+                    <DataGridTextColumn Width="Auto"
+                                        Header="Конец аренды автомобиля"
+                                        Binding="{Binding Stop_rent}"
+                                        FontSize="15"/>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Background="Black"
+                                        Foreground="White"
+                                        x:Name="BtnOkk"
+                                        Click="BtnOkk_Click"
+                                        ToolTip="Посмотреть"
+                                        BorderBrush="White">
+                                    <StackPanel Orientation="Horizontal">
+                                        <materialDesign:PackIcon Kind="Check"/>
+                                    </StackPanel>
+                                </Button>
+
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                </DataGrid.Columns>
+
+            </DataGrid>
+        </StackPanel>
+        <Button Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top"
+                        Margin="-10 20 0 0"
+                        FontSize="20"
+                        Content="Назад" 
+                        Height="40"
+                        Width="90"
+                        Foreground="White"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        x:Name="BtnBack7"
+                        Click="BtnBack7_Click"  Cursor="Hand"/>
+    </Grid>
+</Page>

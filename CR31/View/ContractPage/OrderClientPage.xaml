@@ -1,0 +1,136 @@
+﻿<Page x:Class="CR31.View.ContractPage.OrderClientPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CR31.View.ContractPage"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="OrderClientPage">
+
+    <Grid>
+
+        <Border HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                CornerRadius="25"
+                Width="450"
+                Height="500"
+                Background="Gray"
+                Effect="{StaticResource MaterialDesignElevationShadow16}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Top"
+                            Margin="0 40 0 0">
+                    <TextBlock Text="Создать заказ"
+                               FontSize="25"
+                               FontWeight="SemiBold"
+                               Foreground='Azure'
+                               TextAlignment="Center"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Top">
+                    <StackPanel Orientation="Horizontal"
+                                Margin="0 70 0 0">
+                        <materialDesign:PackIcon Kind="People"
+                                                 Margin="0 7 5 0"
+                                                 Foreground="White"/>
+                        <TextBox Width="150"
+                                 x:Name="TbFIO"
+                                 FontSize="13"
+                                 Foreground="Black"
+                                 materialDesign:HintAssist.Hint="ФИО"
+                                 materialDesign:TextFieldAssist.HasClearButton="True"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal"
+                                Margin="0 5 0 0">
+                        <materialDesign:PackIcon Kind="CarArrowRight"
+                                                 Margin="0 7 5 0"
+                                                 Foreground="White"/>
+                        <TextBox Width="150"
+                                 x:Name="TbModelCar"
+                                 FontSize="13"
+                                 Foreground="Black"
+                                 materialDesign:HintAssist.Hint="Модель автомобиля"
+                                 materialDesign:TextFieldAssist.HasClearButton="True"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal"
+                                Margin="0 5 0 0" RenderTransformOrigin="0.5,0.5">
+                        <StackPanel.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform AngleX="2.429"/>
+                                <RotateTransform/>
+                                <TranslateTransform X="-0.558"/>
+                            </TransformGroup>
+                        </StackPanel.RenderTransform>
+                        <materialDesign:PackIcon Kind="CarArrowRight"
+                                                 Margin="0 5 5 0"
+                                                 Foreground="White"/>
+                        <TextBox Width="150"
+                                     x:Name="TbMarka"
+                                     FontSize="13"
+                                     Foreground="Black"
+                                     materialDesign:HintAssist.Hint="Марка автомобиля"
+                                     materialDesign:TextFieldAssist.HasClearButton="True"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal"
+                                Margin="0 0 0 0">
+                        <materialDesign:PackIcon Kind="EventBlankOutline"
+                                                 Margin="0 10 5 0"
+                                                 Foreground="White"/>
+                        <TextBox Width="150"
+                                     x:Name="TbSrok"
+                                     FontSize="12"
+                                     Foreground="Black"
+                                     materialDesign:HintAssist.Hint="Срок аренды(кол. дней)"
+                                     materialDesign:TextFieldAssist.HasClearButton="True"/>
+                    </StackPanel>
+
+                    <Button Background="White"
+                            Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top"
+                                Foreground="Black"
+                                x:Name="BtnCreate11"
+                                Click="BtnCreate11_Click"
+                                BorderThickness="0"
+                                Style="{StaticResource MaterialDesignRaisedButton}"
+                                materialDesign:ButtonProgressAssist.Value="-1"
+                                materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+                                materialDesign:ButtonProgressAssist.IsIndeterminate="True"            
+                                Margin="0 60 0 0">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Contact"
+                                                         Margin="0 0 5 0"/>
+                            <TextBlock Text="Создать заказ"
+                                           FontWeight="SemiBold"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+
+
+                <Button Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top"
+                        Margin="5 20 0 0"
+                        FontSize="20"
+                        Content="Назад" 
+                        Height="40"
+                        Width="90"
+                        Foreground="White"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        x:Name="BtnBack11"
+                        Click="BtnBack11_Click"  Cursor="Hand"/>
+
+            </Grid>
+        </Border>
+    </Grid>
+</Page>
